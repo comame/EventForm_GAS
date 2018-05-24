@@ -1,7 +1,8 @@
 ## 5. Web App
 
-Apps Script では、簡易的な Web アプリケーションを作成できます。
-GET, POST リクエストを受け取り、HTML やテキスト形式のレスポンスを返します。
+Apps Script では、簡易的な Web アプリケーションを作成できます。  
+GET, POST リクエストを受け取り、HTML やテキスト形式のレスポンスを返します。  
+`「公開」>「Web アプリケーションとして導入」` で公開設定を行えます。
 
 ## 使用する API
 - [ContentService](https://developers.google.com/apps-script/reference/content/content-service)
