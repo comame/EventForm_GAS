@@ -3,16 +3,17 @@
 
 // スプレッドシートにイベントデータを追加
 function registerEventToSheet(title, organizer, date) {
-  var sheet = spreadsheet.getSheetByName("events");
+  var sheet = TODO("event という名前のシートを取得");
     
-  var newRow = sheet.getLastRow() + 1;
+  var newRow = TODO("新しいイベントを追加する行番号を指定");
+
   var id = 1;
   if (newRow > 1) {
     // 1つ前のイベント ID + 1
     id = 1 + sheet.getRange(newRow - 1, 1).getValue();
   }
   
-  sheet.getRange(newRow, 1, 1, 4).setValues([[id, title, organizer, date]]);
+  TODO("新しい行にイベント情報を追加");
   
   // 参加者リストを初期化
   getParticipationsSheet(id).clear();
@@ -23,7 +24,7 @@ function registerEventToSheet(title, organizer, date) {
 // 参加者を追加
 function addParticipation(eventId, name) {
   var sheet = getParticipationsSheet(eventId);
-  sheet.getRange(sheet.getLastRow() + 1, 1).setValue(name);
+  TODO("新しい行に参加者名を追加");
 }
 
 // 参加者管理リストを取得
@@ -34,47 +35,6 @@ function getParticipationsSheet(eventId) {
     sheet = spreadsheet.insertSheet(sheetName);
   }
   return sheet;
-}
-
-// イベントデータを取得
-function getEventData(eventId) {
-  var events = spreadsheet
-    .getSheetByName("events")
-    .getRange(1, 1, spreadsheet.getLastRow(), 4)
-    .getDisplayValues();
-  var event = [];
-  for (var i = 0; i < events.length; i++) {
-    var it = events[i];
-    if (it == eventId) {
-      event = it;
-      break;
-    }
-  }
-  
-  // 参加者を取得 別関数に分けたい
-  var participations = [];
-  var participationsSheet = getParticipationsSheet(eventId);
-  var lastRow = participationsSheet.getLastRow();
-
-  if (lastRow == 0) {
-    participations = [];
-  } else { 
-    participationsSheet
-      .getRange(1, 1, participationsSheet.getLastRow(), 1)
-      .getValues()
-      .forEach(function(it) {
-        // 2次元配列を1次元に
-        participations.push(it[0]);
-      });
-  }
-  
-  return {
-    eventId: event[0],
-    name: event[1],
-    organizer: event[2],
-    date: event[3],
-    participations: participations
-  }
 }
 
 /* -- */
@@ -91,6 +51,7 @@ function createChoiceValues() {
   
   var events = sheet.getRange(1, 1, lastRow, 2).getValues();
   var choices = [];
+  
   for (var i = 0; i < events.length; i++) {
     var event = events[i];
     if (event[0] == "") continue;

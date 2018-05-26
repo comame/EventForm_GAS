@@ -1,11 +1,10 @@
-var spreadsheetId = "id";
+var spreadsheetId = "15QnTrhTeDXE0CddDayMG8GatrDR5RbjL6AWsJ8JKIj0";
 var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
 var form = FormApp.getActiveForm();
 
 /* Form */
 
 function onSubmit(e) {
-  console.log(e.response)
   var responses = e.response.getItemResponses();
   
   var type = responses[0].getResponse();
@@ -20,6 +19,7 @@ function onSubmit(e) {
     var eventId = + responses[1].getResponse().split(" - ")[0];
     var name = responses[2].getResponse();
     
+    // イベントなし
     if (eventId == 0) {
       return;
     }
@@ -31,5 +31,5 @@ function onSubmit(e) {
 /* Dashboard */
 
 function onGet(e) {
-
+  var params = e.parameters;
 }
