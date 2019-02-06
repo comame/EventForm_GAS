@@ -1,4 +1,4 @@
-# 学生 LT  |  Google Apps Script  Hands-on
+Google Apps Script  Hands-on
 
 # 準備
 1. https://drive.google.com/open?id=1ibD0qemAR6ByurYLqjlLOkjx4i_dIgJO にアクセス
