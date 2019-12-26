@@ -3,7 +3,7 @@
 トリガーを使用することで、関数を特定のイベント発生時に自動実行することができます。
 `「編集」>「現在のプロジェクトのトリガー」`を開き、時間ベースのトリガーを設定してみましょう。
 
-[Triggers | Apps Script | Google Developers](https://developers.google.com/apps-script/guides/triggers))
+[Triggers | Apps Script | Google Developers](https://developers.google.com/apps-script/guides/triggers)
 
 ### 使用する API
 

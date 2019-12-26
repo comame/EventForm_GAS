@@ -5,7 +5,7 @@
 
 スプレッドシートに紐付いたスクリプトを作成するには、「ツール」>「スクリプト エディタ」を開いてください。
 
-[COntainer-bound Scripts | Apps Script | Google Developers ](https://developers.google.com/apps-script/guides/bound)
+[Container-bound Scripts | Apps Script | Google Developers ](https://developers.google.com/apps-script/guides/bound)
 
 ### 使用する API
 - [SpreadsheetApp](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app)
